@@ -44,7 +44,18 @@
           </svg>
         </div>
         <div class="header_searches_chs">
-          <input class="header_searches_chs--inp" type="text" placeholder="Choose country">
+          <select id="countryFilter" class="header_searches_chs--inp" style="cursor: pointer;">
+            <option value="US">United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+            <option value="DE">Germany</option>
+            <option value="FR">France</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+            <option value="MX">Mexico</option>
+            <option value="BR">Brazil</option>
+          </select>
           <svg class="header_searches_chs--svg" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.49518 7.5L-1.20998e-05 2.69824e-07L12.9904 -8.65831e-07L6.49518 7.5Z" fill="#939393"/>
           </svg>
@@ -53,8 +64,72 @@
   </header>
   <main>
     <section class="events">
-      
+      <div class="events_container">
+        <!-- render events here -->
+      </div>
     </section>
+
+    <div class="modal is-hidden">
+      <svg class="modal--closebtn" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.28557 25C0.95625 25 0.626931 24.8747 0.376724 24.6227C-0.125574 24.1204 -0.125574 23.306 0.376724 22.8038L22.8043 0.376714C23.3066 -0.125571 24.121 -0.125571 24.6233 0.376714C25.1256 0.878999 25.1256 1.69333 24.6233 2.19593L2.19598 24.6227C1.94389 24.8732 1.61457 25 1.28557 25Z" fill="#4C00FE"/>
+        <path d="M23.7147 25C23.3854 25 23.0564 24.8747 22.8059 24.6227L0.376724 2.19593C-0.125574 1.69333 -0.125574 0.878999 0.376724 0.376714C0.879022 -0.125571 1.69337 -0.125571 2.19598 0.376714L24.6233 22.8038C25.1256 23.306 25.1256 24.1204 24.6233 24.6227C24.3712 24.8732 24.0422 25 23.7147 25Z" fill="#4C00FE"/>
+      </svg>
+      <span style="display: flex; justify-content: center; width: 100%;">
+        <img class="modal--img" alt="">
+      </span>
+      <div class="modal_container">
+        <img class="modal_container--banner" alt="">
+        <div class="modal_container_content">
+          <p class="modal_container_content--title">INFO</p>
+          <p class="modal_container_content--info minfo"></p>
+
+          <p class="modal_container_content--title">WHEN</p>
+          <p class="modal_container_content--info mtime"></p>
+
+          <p class="modal_container_content--title">WHERE</p>
+          <p class="modal_container_content--info mplace"></p>
+
+          <p class="modal_container_content--title">WHO</p>
+          <p class="modal_container_content--info martist"></p>
+
+          <p class="modal_container_content--title">PRICES</p>
+          <span class="modal_container_content_sp">
+            <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.22222 0L0 0L0 19.3333H3.22222L3.22222 0Z" fill="#0E0E0E"/>
+              <path d="M11.3266 0L8.10439 0L8.10439 19.3333H11.3266L11.3266 0Z" fill="#0E0E0E"/>
+              <path d="M16.2088 0L12.9866 0L12.9866 19.3333H16.2088L16.2088 0Z" fill="#0E0E0E"/>
+              <path d="M28.9999 0L24.2154 0L24.2154 19.3333H28.9999L28.9999 0Z" fill="#0E0E0E"/>
+              <path d="M6.44449 0L4.88219 0L4.88219 19.3333H6.44449L6.44449 0Z" fill="#0E0E0E"/>
+              <path d="M19.3333 0L17.771 0L17.771 19.3333H19.3333L19.3333 0Z" fill="#0E0E0E"/>
+              <path d="M22.5555 0L20.9932 0L20.9932 19.3333H22.5555L22.5555 0Z" fill="#0E0E0E"/>
+            </svg>
+            <p class="modal_container_content--info mprice"></p>
+          </span>
+          <button class="modal_container_content--btbtn">BUY TICKETS</button>
+          <span class="modal_container_content_sp">
+            <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.22222 0L0 0L0 19.3333H3.22222L3.22222 0Z" fill="#0E0E0E"/>
+              <path d="M11.3266 0L8.10439 0L8.10439 19.3333H11.3266L11.3266 0Z" fill="#0E0E0E"/>
+              <path d="M16.2088 0L12.9866 0L12.9866 19.3333H16.2088L16.2088 0Z" fill="#0E0E0E"/>
+              <path d="M28.9999 0L24.2154 0L24.2154 19.3333H28.9999L28.9999 0Z" fill="#0E0E0E"/>
+              <path d="M6.44449 0L4.88219 0L4.88219 19.3333H6.44449L6.44449 0Z" fill="#0E0E0E"/>
+              <path d="M19.3333 0L17.771 0L17.771 19.3333H19.3333L19.3333 0Z" fill="#0E0E0E"/>
+              <path d="M22.5555 0L20.9932 0L20.9932 19.3333H22.5555L22.5555 0Z" fill="#0E0E0E"/>
+            </svg>
+            <p class="modal_container_content--info mvipprice"></p>
+          </span>
+          <button class="modal_container_content--btbtn">BUY TICKETS</button>
+        </div>
+      </div>
+      <span class="modal_s">
+        <button class="modal_s--morebtn">MORE FROM THIS AUTHOR</button>
+      </span>
+    </div>
+    
+    <div class="pagination"><!-- rednder buttons here --></div>
+    <p class="foot-title">
+      © 2021 | All Rights Reserved | Developed with ♥ by GoIT Students
+    </p>
   </main>
   <script type="module" src="./index.js"></script>
 </body>
